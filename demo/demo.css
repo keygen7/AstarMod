@@ -5,6 +5,7 @@ html, body {
 body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #222; 
+    
 }
 
 .clearfix {
@@ -13,9 +14,11 @@ body {
 .clearfix:before, .clearfix:after {
   display: table;
   content: "";
+  
 }
 .clearfix:after {
   clear: both;
+  
 }
 h2 {
     font-weight:normal;
@@ -106,8 +109,6 @@ pre span.key {
 	color: #f11;
 	font-weight:normal;
 }
-
-
 .left {
 	float:left;
 }
@@ -138,9 +139,11 @@ pre span.key {
 	width:650px;
 	height:650px;
 	position: relative;
+  
 }
 
 .grid_item {
+  
 	display: block;
 	border: 1px solid #bbb;
 	float: left;
@@ -148,7 +151,9 @@ pre span.key {
 	font-size:10px;
 }
 .grid_item.wall {
-  background-color: #000000;
+  background-image: url('arbol\ \(Personalizado\).png');
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 .grid_item.weight1 {
   background-color: #ffffff;
@@ -160,13 +165,19 @@ pre span.key {
   background-color: #ABD1FF;
 }
 .grid_item.start {
-	background-color: #FF703F;
+	background-image: url('x.png');
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 .grid_item.active {
-	background-color: #FF703F;
+	background-image: url('link (Personalizado) (2).jpg'); 
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 .grid_item.finish {
-
+  background-image: url('link (Personalizado) (2).jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 #weightsKey {
   display: none;

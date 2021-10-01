@@ -200,7 +200,7 @@ GraphSearch.prototype.animateNoPath = function() {
 };
 GraphSearch.prototype.animatePath = function(path) {
     var grid = this.grid,
-        timeout = 1000 / grid.length,
+        timeout = 8000 / grid.length, //Esto retrasa el tiempo en el que se muestra el camino
         elementFromNode = function(node) {
         return grid[node.x][node.y];
     };
@@ -228,8 +228,9 @@ GraphSearch.prototype.animatePath = function(path) {
         }
         elementFromNode(path[i]).addClass(css.active);
         setTimeout(function() {
+            removeClass(path,i); //Se agregó del original para evitar que se vea como una vibora
             addClass(path, i+1);
-        }, timeout*path[i].getCost());
+        }, timeout*path[i].getCost()); 
     };
 
     addClass(path, 0);
