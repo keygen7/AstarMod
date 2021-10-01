@@ -1,0 +1,71 @@
+[33mcommit 19621fdba7e01d08fe7c5badd4f8a0b6b072c5bd[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31mastarMod/master[m[33m)[m
+Reflog: HEAD@{0} (Germán Guerrero Mtz <gguerrero7@outlook.com>)
+Reflog message: checkout: moving from master to master
+Author: keygen7 <59460022+keygen7@users.noreply.github.com>
+Date:   Thu Sep 30 23:29:07 2021 -0500
+
+    Initial commit
+
+[33mcommit 19621fdba7e01d08fe7c5badd4f8a0b6b072c5bd[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31mastarMod/master[m[33m)[m
+Reflog: HEAD@{1} (Germán Guerrero Mtz <gguerrero7@outlook.com>)
+Reflog message: reset: moving to astarMod/master
+Author: keygen7 <59460022+keygen7@users.noreply.github.com>
+Date:   Thu Sep 30 23:29:07 2021 -0500
+
+    Initial commit
+
+[33mcommit 5538bd074af4ca5fc0aac30f85f3fdd15cafcfa6[m
+Reflog: HEAD@{2} (Germán Guerrero Mtz <gguerrero7@outlook.com>)
+Reflog message: commit: Modificación de los gráficos
+Author: Germán Guerrero Mtz <gguerrero7@outlook.com>
+Date:   Thu Sep 30 23:25:27 2021 -0500
+
+    Modificación de los gráficos
+
+[33mcommit 32baa2ef9efb3a1e1c19941eb5a2c39d814e108c[m
+Reflog: HEAD@{3} (Germán Guerrero Mtz <gguerrero7@outlook.com>)
+Reflog message: Branch: renamed refs/heads/master to refs/heads/master
+Author: Germán Guerrero Mtz <gguerrero7@outlook.com>
+Date:   Thu Sep 30 22:40:08 2021 -0500
+
+    Modificación de los gráficos
+
+[33mcommit 32baa2ef9efb3a1e1c19941eb5a2c39d814e108c[m
+Reflog: HEAD@{5} (Germán Guerrero Mtz <gguerrero7@outlook.com>)
+Reflog message: Branch: renamed refs/heads/main to refs/heads/master
+Author: Germán Guerrero Mtz <gguerrero7@outlook.com>
+Date:   Thu Sep 30 22:40:08 2021 -0500
+
+    Modificación de los gráficos
+
+[33mcommit 32baa2ef9efb3a1e1c19941eb5a2c39d814e108c[m
+Reflog: HEAD@{7} (Germán Guerrero Mtz <gguerrero7@outlook.com>)
+Reflog message: Branch: renamed refs/heads/master to refs/heads/main
+Author: Germán Guerrero Mtz <gguerrero7@outlook.com>
+Date:   Thu Sep 30 22:40:08 2021 -0500
+
+    Modificación de los gráficos
+
+[33mcommit 32baa2ef9efb3a1e1c19941eb5a2c39d814e108c[m
+Reflog: HEAD@{9} (Germán Guerrero Mtz <gguerrero7@outlook.com>)
+Reflog message: commit: Modificación de los gráficos
+Author: Germán Guerrero Mtz <gguerrero7@outlook.com>
+Date:   Thu Sep 30 22:40:08 2021 -0500
+
+    Modificación de los gráficos
+
+[33mcommit ef5ec96002f87f8ae9854c9a411e6f482d20ff35[m
+Reflog: HEAD@{10} (Germán Guerrero Mtz <gguerrero7@outlook.com>)
+Reflog message: checkout: moving from master to master
+Author: Brian Grinstead <briangrinstead@gmail.com>
+Date:   Thu Dec 17 17:18:43 2015 -0800
+
+    whitespace in test file
+
+[33mcommit ef5ec96002f87f8ae9854c9a411e6f482d20ff35[m
+Reflog: HEAD@{11} (Germán Guerrero Mtz <gguerrero7@outlook.com>)
+Reflog message: initial pull
+Author: Brian Grinstead <briangrinstead@gmail.com>
+Date:   Thu Dec 17 17:18:43 2015 -0800
+
+    whitespace in test file
