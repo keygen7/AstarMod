@@ -150,7 +150,7 @@ pre span.key {
 	line-height:12px;
 	font-size:10px;
 }
-.grid_item.wall {
+.grid_item.wall {/*Modfica las propiedades de los muros*/
   background-image: url('arbol\ \(Personalizado\).png');
   background-position: center center;
   background-repeat: no-repeat;
@@ -164,17 +164,17 @@ pre span.key {
 .grid_item.weight5 {
   background-color: #ABD1FF;
 }
-.grid_item.start {
+.grid_item.start {/*Modfica las propiedades de la casilla inicial*/
 	background-image: url('x.png');
   background-position: center center;
   background-repeat: no-repeat;
 }
-.grid_item.active {
+.grid_item.active {/*Modifica las propiedades de la casillas activas*/
 	background-image: url('link (Personalizado) (2).jpg'); 
   background-position: center center;
   background-repeat: no-repeat;
 }
-.grid_item.finish {
+.grid_item.finish {/*Modifica las propiedades de la casilla destino, no está activa esta propiedad*/
   background-image: url('link (Personalizado) (2).jpg');
   background-position: center center;
   background-repeat: no-repeat;
