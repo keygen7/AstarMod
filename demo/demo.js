@@ -27,6 +27,8 @@ $(function() {
 
     var grid = new GraphSearch($grid, opts, astar.search);
 
+    let remainingTime = 5;
+
     $("#btnGenerate").click(function() {
         grid.initialize();
     });
@@ -63,6 +65,38 @@ $(function() {
         }
     });
 
+    function findRandomCell() {
+        let cellFound = false;
+
+        while (!cellFound) {
+            const x = parseInt(Math.random() * 100 % parseInt(opts.gridSize));
+            const y = parseInt(Math.random() * 100 % parseInt(opts.gridSize));
+
+            const cell = grid.graph.grid[x][y];
+
+            if (cell.weight !== 0) return [x, y];
+        }
+    }
+
+    function autoStart() {
+        $("#btnGenerate").trigger("click");
+
+        const [x, y] = findRandomCell();
+        $(`#cell_${x}_${y}`).trigger("click");
+    }
+
+    const _timer = setInterval(tickStart, 1000)
+
+    function tickStart() {
+        remainingTime--;
+        $('#timer').text(`Iniciando en ${remainingTime} segundo${remainingTime > 1 ? 's' : ''}`);
+
+
+        if (remainingTime === 0) {
+            clearInterval(_timer);
+            autoStart();
+        }
+    }
 });
 
 var css = { start: "start", finish: "finish", wall: "wall", active: "active" };
@@ -133,11 +167,11 @@ GraphSearch.prototype.initialize = function() {
         self.cellClicked($(this));
     });
 };
-GraphSearch.prototype.cellClicked = function($end) {
+GraphSearch.prototype.cellClicked = function($end, endNode) {
 
-    var end = this.nodeFromElement($end);
+    var end = $end ? this.nodeFromElement($end) : endNode;
 
-    if ($end.hasClass(css.wall) || $end.hasClass(css.start)) {
+    if (!endNode && ($end.hasClass(css.wall) || $end.hasClass(css.start))) {
         return;
     }
 
@@ -200,7 +234,7 @@ GraphSearch.prototype.animateNoPath = function() {
 };
 GraphSearch.prototype.animatePath = function(path) {
     var grid = this.grid,
-        timeout = 8000 / grid.length, //Esto retrasa el tiempo en el que se muestra el camino
+        timeout = 10000 / grid.length, //Esto retrasa el tiempo en el que se muestra el camino
         elementFromNode = function(node) {
             return grid[node.x][node.y];
         };
@@ -223,6 +257,7 @@ GraphSearch.prototype.animatePath = function(path) {
         }
     };
     var addClass = function(path, i) {
+        const cost = path[i].getCost();
         if (i >= path.length) { // Finished showing path, now remove
             return removeClass(path, 0);
         }
