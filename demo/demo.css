@@ -158,7 +158,7 @@ pre span.key {
 #controls {
     margin-bottom: 25px;
     padding: 5px 0;
-    max-width: 250px;
+    /* max-width: 250px; */
     flex-grow: 1;
 }
 
@@ -179,25 +179,26 @@ pre span.key {
 
 .grid_item.wall {
     /*Modfica las propiedades de los muros*/
-    background-image: url('wall2.png');
+    background-color: #37851f;
+    background-image: url('montaña_opt.png');
     background-position: center center;
     background-repeat: no-repeat;
 }
 
 .grid_item.weight1 {
-    background-color: #ffffff;
+    background-color: #37851f;
 }
 
 .grid_item.weight3 {
-    background-color: #D6EAFF;
-    background-image: url('2xoutline_air_white_24dp.png');
+    background-color: #37851f;
+    background-image: url('arbusto1_opt.png');
     background-repeat: no-repeat;
     /* background-attachment: fixed; */
     background-position: center;
 }
 
 .grid_item.weight5 {
-    background-color: #ABD1FF;
+    background-color: #2c78d4;
     background-image: url('outline_water_white_24dp.png');
     background-repeat: no-repeat;
     /* background-attachment: fixed; */
@@ -206,21 +207,22 @@ pre span.key {
 
 .grid_item.start {
     /*Modfica las propiedades de la casilla inicial*/
-    background-image: url('x.png');
+    background-color: #eb9008;
+    background-image: url('jabali_opt.png');
     background-position: center center;
     background-repeat: no-repeat;
 }
 
 .grid_item.active {
     /*Modifica las propiedades de la casillas activas*/
-    background-image: url('link (Personalizado) (2).jpg');
+    background-image: url('indio_opt.png');
     background-position: center center;
     background-repeat: no-repeat;
 }
 
 .grid_item.finish {
     /*Modifica las propiedades de la casilla destino, no está activa esta propiedad*/
-    background-image: url('link (Personalizado) (2).jpg');
+    background-image: url('indio_opt.png');
     background-position: center center;
     background-repeat: no-repeat;
 }
