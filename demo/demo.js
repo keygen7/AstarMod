@@ -1,10 +1,3 @@
-/*  demo.js http://github.com/bgrins/javascript-astar
-    MIT License
-
-    Set up the demo page for the A* Search
-*/
-/* global Graph, astar, $ */
-
 var WALL = 0,
     performance = window.performance;
 
