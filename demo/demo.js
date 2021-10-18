@@ -79,15 +79,23 @@ $(function() {
     }
 
     let _timer = setInterval(tickStart, 1000);
-    grid.onComplete = function callback(ok, error) {
-        if (grid.completed && !grid.started) {
-            clearInterval(_timer);
-            grid.started = true;
-            remainingTime = 5;
-            grid.completed = false;
-            _timer = setInterval(tickStart, 1000);
-        }
-    }
+    // grid.onComplete = function callback(ok, error) {
+    //     if (grid.completed && !grid.started) {
+    //         clearInterval(_timer);
+    //         grid.started = true;
+    //         remainingTime = 5;
+    //         grid.completed = false;
+    //         _timer = setInterval(tickStart, 1000);
+    //     }
+    // }
+
+    $("#reiniciar").click(() => {
+        clearInterval(_timer);
+        grid.started = true;
+        remainingTime = 5;
+        grid.completed = false;
+        _timer = setInterval(tickStart, 1000);
+    })
 
     function autoStart() {
         grid.started = true;
@@ -254,14 +262,13 @@ GraphSearch.prototype.animatePath = function(path) {
 
     var self = this;
     // will add start class if final
-    var removeClass = function(path, i) {
+    var removeClass = async function(path, i) {
         if (i >= path.length) { // finished removing path, set start positions
             return setStartClass(path, i);
         }
         elementFromNode(path[i]).removeClass(css.active);
-        setTimeout(function() {
-            removeClass(path, i + 1);
-        }, timeout * path[i].getCost());
+        await sleep(timeout * path[i].getCost());
+        removeClass(path, i + 1);
     };
     var setStartClass = function(path, i) {
         if (i === path.length) {
