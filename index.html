@@ -6,32 +6,36 @@
     <title>IA - Proyecto Unidad 1</title>
 
     <link rel="stylesheet" type="text/css" media="screen, projection" href="demo/demo.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
 </head>
 
 <body>
-    <div id="content">
-
-        <div id="controls" class='clear'>
+    <div id="content" class="columns">
+        <div id="controls" class="column">
             <h3>Controles</h3>
             <label for="selectWallFrequency">Frecuencia de pared: </label>
-            <select id="selectWallFrequency">
-        <option value=".1">10%</option>
-        <option value=".2">20%</option>
-        <option value=".3">30%</option>
-        <option value=".4">40%</option>
-      </select>
+            <div class="select">
+                <select id="selectWallFrequency">
+                    <option value=".1">10%</option>
+                    <option value=".2">20%</option>
+                    <option value=".3">30%</option>
+                    <option value=".4">40%</option>
+                </select>
+            </div>
             <br />
             <label for="selectGridSize">Tamaño de cuadricula: </label>
-            <select id="selectGridSize" name="selectGridSize">
-        <option value="10" selected="selected">10x10</option>
-        <option value="15">15x15</option>
-        <option value="20">20x20</option>
-        <option value="30">30x30</option>
-        <option value="40">40x40</option>
-        <option value="50">50x50</option>
-        <option value="100">100x100</option>
-        <option value="150">150x150</option>
-      </select>
+            <div class="select">
+                <select id="selectGridSize" name="selectGridSize">
+                    <option value="10" selected="selected">10x10</option>
+                    <option value="15">15x15</option>
+                    <option value="20">20x20</option>
+                    <option value="30">30x30</option>
+                    <option value="40">40x40</option>
+                    <option value="50">50x50</option>
+                    <option value="100">100x100</option>
+                    <option value="150">150x150</option>
+                </select>
+            </div>
 
             <br />
             <label for="checkDebug">Mostrar información de busqueda</label>
@@ -49,10 +53,10 @@
             <label for="displayWeights">Mostrar pesos</label>
             <input type="checkbox" name="displayWeights" id="displayWeights" />
             <br />
-            <input type="button" id="btnGenerate" value="Generar nuevo mapa" />
+            <input class="button is-primary" type="button" id="btnGenerate" value="Generar nuevo mapa" />
 
             <p>Costo: <span id="costos"></span></p>
-            <input type="button" id="reiniciar" value="Reiniciar" />
+            <input class="button is-primary is-light mt-5" type="button" id="reiniciar" value="Reiniciar" />
             <fieldset id='weightsKey'>
                 <legend>Terrenos:</legend>
                 <div>
@@ -71,7 +75,7 @@
             <br />
         </div>
 
-        <div id="main">
+        <div id="main" class="column is-three-quarters">
             <span id="timer">Iniciando en 5 segundos</span>
             <div id="search_grid">Cargando cuadricula...</div>
         </div>

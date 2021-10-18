@@ -72,15 +72,9 @@ $(function() {
     }
 
     let _timer = setInterval(tickStart, 1000);
-    // grid.onComplete = function callback(ok, error) {
-    //     if (grid.completed && !grid.started) {
-    //         clearInterval(_timer);
-    //         grid.started = true;
-    //         remainingTime = 5;
-    //         grid.completed = false;
-    //         _timer = setInterval(tickStart, 1000);
-    //     }
-    // }
+    grid.onComplete = function callback(ok, error) {
+        window.location.reload();
+    }
 
     $("#reiniciar").click(() => {
         clearInterval(_timer);
@@ -261,7 +255,7 @@ GraphSearch.prototype.animatePath = function(path) {
         }
         elementFromNode(path[i]).removeClass(css.active);
         await sleep(timeout * path[i].getCost());
-        removeClass(path, i + 1);
+        // removeClass(path, i + 1);
     };
     var setStartClass = function(path, i) {
         if (i === path.length) {
@@ -273,7 +267,7 @@ GraphSearch.prototype.animatePath = function(path) {
     };
     var addClass = async function(path, i) {
         if (i >= path.length) { // Finished showing path, now remove
-            return removeClass(path, 0);
+            return removeClass(path, path.length);
         }
         elementFromNode(path[i]).addClass(css.active);
         await sleep(timeout * path[i].getCost());
