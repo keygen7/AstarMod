@@ -179,7 +179,7 @@ pre span.key {
 
 .grid_item.wall {
     /*Modfica las propiedades de los muros*/
-    background-image: url('arbol\ \(Personalizado\).png');
+    background-image: url('wall2.png');
     background-position: center center;
     background-repeat: no-repeat;
 }

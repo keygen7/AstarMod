@@ -3,7 +3,7 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>JavaScript A* Search Algorithm</title>
+    <title>IA - Proyecto Unidad 1</title>
 
     <link rel="stylesheet" type="text/css" media="screen, projection" href="demo/demo.css" />
 </head>
@@ -13,7 +13,7 @@
 
         <div id="controls" class='clear'>
             <h3>Controles</h3>
-            <label for="selectWallFrequency">Wall Frequency: </label>
+            <label for="selectWallFrequency">Frecuencia de pared: </label>
             <select id="selectWallFrequency">
         <option value=".1">10%</option>
         <option value=".2">20%</option>
@@ -21,7 +21,7 @@
         <option value=".4">40%</option>
       </select>
             <br />
-            <label for="selectGridSize">Grid Size: </label>
+            <label for="selectGridSize">Tamaño de cuadricula: </label>
             <select id="selectGridSize" name="selectGridSize">
         <option value="10" selected="selected">10x10</option>
         <option value="15">15x15</option>
@@ -34,26 +34,26 @@
       </select>
 
             <br />
-            <label for="checkDebug">Show search info?</label>
+            <label for="checkDebug">Mostrar información de busqueda</label>
             <input type="checkbox" name="checkDebug" id="checkDebug" />
             <br />
-            <label for="searchDiagonal">Allow diagonal movement?</label>
-            <input type="checkbox" name="searchDiagonal" id="searchDiagonal" />
+            <!-- <label for="searchDiagonal">Permitir movimiento diagonal</label>
+            <input type="checkbox" name="searchDiagonal" id="searchDiagonal" /> -->
             <br />
-            <label for="checkClosest">Closest node if target unreachable?</label>
-            <input type="checkbox" name="checkClosest" id="checkClosest" />
+            <!-- <label for="checkClosest">Closest node if target unreachable?</label>
+            <input type="checkbox" name="checkClosest" id="checkClosest" /> -->
             <br />
-            <label for="generateWeights">Add random weights?</label>
+            <label for="generateWeights">Terreno aleatorio</label>
             <input type="checkbox" name="generateWeights" id="generateWeights" checked />
             <br />
-            <label for="displayWeights">Display weight values?</label>
+            <label for="displayWeights">Mostrar pesos</label>
             <input type="checkbox" name="displayWeights" id="displayWeights" />
             <br />
             <input type="button" id="btnGenerate" value="Generate New Map" />
 
             <p>Costo: <span id="costos"></span></p>
             <fieldset id='weightsKey'>
-                <legend>Key:</legend>
+                <legend>Terrenos:</legend>
                 <div>
                     <span class="grid_item weight1" style="width: 14.25px; height: 14.25px; margin-right: 6px;" id="keyWeight3"></span> Weight of 1
                 </div>
@@ -72,7 +72,7 @@
 
         <div id="main">
             <span id="timer">Iniciando en 5 segundos</span>
-            <div id="search_grid">Loading grid...</div>
+            <div id="search_grid">Cargando cuadricula...</div>
         </div>
 
     </div>

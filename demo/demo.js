@@ -245,7 +245,7 @@ GraphSearch.prototype.animateNoPath = function() {
     };
     jiggle(15);
 };
-GraphSearch.prototype.animatePath = async function(path) {
+GraphSearch.prototype.animatePath = function(path) {
     var grid = this.grid,
         timeout = 10000 / grid.length, //Esto retrasa el tiempo en el que se muestra el camino
         elementFromNode = function(node) {
@@ -271,15 +271,16 @@ GraphSearch.prototype.animatePath = async function(path) {
             self.onComplete(true, null);
         }
     };
-    var addClass = function(path, i) {
+    var addClass = async function(path, i) {
         if (i >= path.length) { // Finished showing path, now remove
             return removeClass(path, 0);
         }
         elementFromNode(path[i]).addClass(css.active);
-        setTimeout(function() {
-            removeClass(path, i); //Se agregó del original para evitar que se vea como una vibora
-            addClass(path, i + 1);
-        }, timeout * path[i].getCost());
+        await sleep(timeout * path[i].getCost());
+
+        removeClass(path, i); //Se agregó del original para evitar que se vea como una vibora
+        addClass(path, i + 1);
+
     };
 
     addClass(path, 0);
