@@ -78,14 +78,27 @@ $(function() {
         }
     }
 
+    let _timer = setInterval(tickStart, 1000);
+    grid.onComplete = function callback(ok, error) {
+        if (grid.completed && !grid.started) {
+            clearInterval(_timer);
+            grid.started = true;
+            remainingTime = 5;
+            grid.completed = false;
+            _timer = setInterval(tickStart, 1000);
+        }
+    }
+
     function autoStart() {
+        grid.started = true;
         $("#btnGenerate").trigger("click");
 
         const [x, y] = findRandomCell();
         $(`#cell_${x}_${y}`).trigger("click");
+        grid.started = false;
+        grid.completed = false;
     }
 
-    const _timer = setInterval(tickStart, 1000)
 
     function tickStart() {
         remainingTime--;
@@ -167,11 +180,11 @@ GraphSearch.prototype.initialize = function() {
         self.cellClicked($(this));
     });
 };
-GraphSearch.prototype.cellClicked = function($end, endNode) {
+GraphSearch.prototype.cellClicked = function($end) {
 
-    var end = $end ? this.nodeFromElement($end) : endNode;
+    var end = this.nodeFromElement($end);
 
-    if (!endNode && ($end.hasClass(css.wall) || $end.hasClass(css.start))) {
+    if ($end.hasClass(css.wall) || $end.hasClass(css.start)) {
         return;
     }
 
@@ -232,7 +245,7 @@ GraphSearch.prototype.animateNoPath = function() {
     };
     jiggle(15);
 };
-GraphSearch.prototype.animatePath = function(path) {
+GraphSearch.prototype.animatePath = async function(path) {
     var grid = this.grid,
         timeout = 10000 / grid.length, //Esto retrasa el tiempo en el que se muestra el camino
         elementFromNode = function(node) {
@@ -254,10 +267,11 @@ GraphSearch.prototype.animatePath = function(path) {
         if (i === path.length) {
             self.$graph.find("." + css.start).removeClass(css.start);
             elementFromNode(path[i - 1]).addClass(css.start);
+            self.completed = true;
+            self.onComplete(true, null);
         }
     };
     var addClass = function(path, i) {
-        const cost = path[i].getCost();
         if (i >= path.length) { // Finished showing path, now remove
             return removeClass(path, 0);
         }
@@ -272,3 +286,9 @@ GraphSearch.prototype.animatePath = function(path) {
     this.$graph.find("." + css.start).removeClass(css.start);
     this.$graph.find("." + css.finish).removeClass(css.finish).addClass(css.start);
 };
+
+async function sleep(ms) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => resolve(), ms);
+    })
+}
